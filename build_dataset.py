@@ -1,6 +1,6 @@
 import pandas as pd
 
-MODE = 'train'
+MODE = 'all'
 
 if MODE == 'train':
     SOURCE = './germeval2018.training.txt'
@@ -9,6 +9,9 @@ if MODE == 'train':
 elif MODE == "test":
     SOURCE = './germeval2018.test.txt'
     TARGET_BASE = './Parsed_Test/'
+elif MODE == "all":
+    SOURCE = './germeval2018.all.txt'
+    TARGET_BASE = './Parsed_ALL/'
 
 TARGET_COARSE = TARGET_BASE + "Coarse/"
 TARGET_FINE = TARGET_BASE + "Fine/"
@@ -86,3 +89,10 @@ if __name__ == "__main__":
 # Counter of classes Coarse:  {'OTHER': 2248, 'OFFENSE': 1150}
 # Available classes:  ['PROFANITY', 'INSULT', 'ABUSE', 'OTHER']
 # Counter of classes:  {'OTHER': 2248, 'ABUSE': 737, 'INSULT': 368, 'PROFANITY': 45}
+
+
+# ----- ALL -------
+# Available classes Coarse:  ['OTHER', 'OFFENSE']
+# Counter of classes Coarse:  {'OTHER': 5569, 'OFFENSE': 2838}
+# Available classes:  ['ABUSE', 'PROFANITY', 'OTHER', 'INSULT']
+# Counter of classes:  {'OTHER': 5569, 'INSULT': 963, 'PROFANITY': 116, 'ABUSE': 1759}
